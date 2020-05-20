@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 app.post('/file', upload.single('file'), (req, res, next) => {
   console.log(req.file);
-  res.send(req.file);
+  res.send(req.file || 'no file submitted');
 });
 
 const PORT = process.env.PORT || 3000;
